@@ -1,0 +1,30 @@
+title Tour Some Sugar on Me
+
+participant Main
+participant Bookings
+participant Venues
+
+participant Bands
+
+participant Database
+
+
+Main->Bookings:Make a list of bookings
+Bookings->Database:Get all the data for venues and bands
+Bookings<--Database:Return venue and band data
+note over Bookings:Make HTML string with data
+Bookings-->Main:Return list as HTML string
+
+Main->Venues:Need to make a list of venues
+Venues->Database:Get all the data for venues
+Venues<--Database:Return venue data
+note over Venues:Make HTML string with data
+Venues-->Main:Return list as HTML string
+
+Main->Bands:Need to make a list of bands
+Bands->Database:Get all the data for bands
+Bands<--Database:Return band data
+note over Bands:Make HTML string with data
+Bands-->Main:Return list as HTML string
+
+note over Main:Make lists visiable to users
